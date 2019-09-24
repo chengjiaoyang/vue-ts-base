@@ -7,7 +7,7 @@ import { IndexData } from '@/types/views/index.interface'
 export default class About extends Vue {
   // Getter
   // @Getter index.author
-    
+
   // Action
   // @Action GET_DATA_ASYN
 
@@ -19,7 +19,7 @@ export default class About extends Vue {
   created() {
     //
   }
-    
+
   activated() {
     //
   }
@@ -32,5 +32,5 @@ export default class About extends Vue {
   init() {
     //
   }
-    
+
 }
