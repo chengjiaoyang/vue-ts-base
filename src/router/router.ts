@@ -7,7 +7,16 @@
 export default [
     {
       path: '/',
-      redirect: '/index',
+    },
+    {
+        path: '/index',
+        name: 'index',
+        component: () => import('@/views/index/index.vue'),
+        meta: {
+            icon: '',
+            keepAlive: true,
+            title: 'index',
+        },
     },
     {
       path: '/login',
@@ -20,13 +29,23 @@ export default [
       }
     },
     {
-      path: '/index',
-      name: 'index',
-      component: () => import('@/views/index/index.vue'),
+      path: '/home',
+      name: 'home',
+      component: () => import('@/views/home/home.vue'),
       meta: {
         icon: '',
         keepAlive: true,
-        title: 'index',
+        title: 'home',
+      },
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('@/views/about/about.vue'),
+      meta: {
+        icon: '',
+        keepAlive: true,
+        title: 'about',
       },
     },
   ];

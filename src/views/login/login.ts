@@ -1,5 +1,4 @@
 import { Component, Vue } from "vue-property-decorator"
-import { Getter, Action } from "vuex-class"
 import { LoginData } from '@/types/views/login.interface'
 // import {  } from "@/components" // 组件
 
@@ -7,7 +6,7 @@ import { LoginData } from '@/types/views/login.interface'
 export default class About extends Vue {
   // Getter
   // @Getter login.author
-    
+
   // Action
   // @Action GET_DATA_ASYN
 
@@ -19,7 +18,7 @@ export default class About extends Vue {
   created() {
     //
   }
-    
+
   activated() {
     //
   }
@@ -32,5 +31,5 @@ export default class About extends Vue {
   init() {
     //
   }
-    
+
 }

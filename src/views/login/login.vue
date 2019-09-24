@@ -1,6 +1,6 @@
 <template>
   <div class="login-wrap">
-    {{data.pageName}}
+    {{data.pageName}}1111
   </div>
 </template>
 
