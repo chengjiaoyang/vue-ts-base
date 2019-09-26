@@ -1,6 +1,6 @@
 import { TestState } from '@/types/views/test.interface'
 import { GetterTree, MutationTree, ActionTree } from 'vuex'
-import * as TestApi from '@/api/test'
+import * as TestApi from '@/api/other/test'
 
 const state: TestState = {
   test: {

@@ -1,6 +1,6 @@
 import { CeshiState } from '@/types/views/ceshi.interface'
 import { GetterTree, MutationTree, ActionTree } from 'vuex'
-import * as CeshiApi from '@/api/ceshi'
+import * as CeshiApi from '@/api/other/ceshi'
 
 const state: CeshiState = {
   ceshi: {

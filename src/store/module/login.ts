@@ -1,6 +1,6 @@
 import { LoginState } from '@/types/views/login.interface'
 import { GetterTree, MutationTree, ActionTree } from 'vuex'
-import * as LoginApi from '@/api/login'
+import * as LoginApi from '@/api/other/login'
 
 const state: LoginState = {
   login: {

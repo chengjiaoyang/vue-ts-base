@@ -1,6 +1,6 @@
 import { AaaState } from '@/types/views/aaa.interface'
 import { GetterTree, MutationTree, ActionTree } from 'vuex'
-import * as AaaApi from '@/api/aaa'
+import * as AaaApi from '@/api/other/aaa'
 
 const state: AaaState = {
   aaa: {
