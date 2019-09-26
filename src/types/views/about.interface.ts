@@ -1,8 +1,3 @@
-import Storage from '@/api/other/about'
-
-console.log(Storage.setItem('aa','11'));
-
-
 // about.Data 参数类型
 export interface AboutData {
   pageName: string

@@ -11,7 +11,7 @@ module.exports = {
   baseUrl: BASE_URL,
   outputDir: 'dist', // 打包生成的生产环境构建文件的目录
   assetsDir: '', // 放置生成的静态资源路径，默认在outputDir
-  indexPath: 'index.html', // 指定生成的 index.html 输入路径，默认outputDir
+  indexPath: 'router.ts.html', // 指定生成的 index.html 输入路径，默认outputDir
   pages: undefined, // 构建多页
   productionSourceMap: false, // 开启 生产环境的 source map?
   chainWebpack: config => {

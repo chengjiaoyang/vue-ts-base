@@ -1,9 +1,53 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import routes from './router';
 
 Vue.use(Router);
-console.log(routes);
+const routes = [
+  {
+    path: '/',
+  },
+  {
+    path: '/index',
+    name: 'router.ts',
+    component: () => import('@/views/index/index.vue'),
+    meta: {
+      icon: '',
+      keepAlive: true,
+      title: 'router.ts',
+    },
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login/login.vue'),
+    meta: {
+      icon: '',
+      keepAlive: true,
+      title: 'login',
+    }
+  },
+  {
+    path: '/home',
+    name: 'home',
+    component: () => import('@/views/home/home.vue'),
+    meta: {
+      icon: '',
+      keepAlive: true,
+      title: 'home',
+    },
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import('@/views/about/about.vue'),
+    meta: {
+      icon: '',
+      keepAlive: true,
+      title: 'about',
+    },
+  },
+];
+
 const router = new Router({
   routes,
   mode: 'history',

@@ -13,7 +13,7 @@ export default class About extends Vue {
 
   // data
   data: IndexData = {
-    pageName: 'index'
+    pageName: 'router.ts'
   }
 
   created() {
