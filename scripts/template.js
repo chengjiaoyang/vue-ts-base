@@ -166,7 +166,7 @@ fs.writeFileSync(`${dirName}.ts`, tsTep) // ts
 fs.writeFileSync(`${dirName}.interface.ts`, interfaceTep) // interface 在当前目录写入接口文件
 
 // process.chdir(`${basePath}/store/module`); // cd store
-fs.writeFileSync(`${dirName}.vuex.ts`, vuexTep) // vuex 在当前目录写入 需要使用的 vuex 的文件
+//fs.writeFileSync(`${dirName}.vuex.ts`, vuexTep) // vuex 在当前目录写入 需要使用的 vuex 的文件
 
 fs.mkdirSync(`${basePath}/utils/client/${dirName}`) ; // 在当前目录中创建 给目录的 api 文件
 process.chdir(`${basePath}/utils/client/${dirName}`); // cd 当前 api 目录中
