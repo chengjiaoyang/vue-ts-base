@@ -141,7 +141,7 @@ export default {
 `
 
 // api 接口模版
-const apiTep = `import Api from '@/utils/request'
+const apiTep = `import {Api} from '@/utils/request'
 
 export const getData = () => {
   return Api.getData()
@@ -152,7 +152,7 @@ export const getData = () => {
 fs.mkdirSync(`${basePath}/views/${dirName}`) // mkdir
 
 process.chdir(`${basePath}/views/${dirName}`) // cd views
-fs.writeFileSync(`${dirName}.vue`, VueTep) // vue 
+fs.writeFileSync(`${dirName}.vue`, VueTep) // vue
 fs.writeFileSync(`${dirName}.ts`, tsTep) // ts
 fs.writeFileSync(`${dirName}.scss`, scssTep) // scss
 

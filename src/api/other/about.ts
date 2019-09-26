@@ -1,4 +1,4 @@
-import Api from '@/utils/request'
+import {Api} from '@/utils/request'
 
 console.log(Api);
 
