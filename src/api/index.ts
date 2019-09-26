@@ -4,4 +4,3 @@
 // @ts-ignore
 import {getData} from './other/aa'
 
-console.log(getData());

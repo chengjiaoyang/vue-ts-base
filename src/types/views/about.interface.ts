@@ -1,3 +1,8 @@
+import Storage from '@/api/other/about'
+
+console.log(Storage.setItem('aa','11'));
+
+
 // about.Data 参数类型
 export interface AboutData {
   pageName: string
@@ -9,6 +14,15 @@ export interface AboutState {
   name : string
 }
 
+/* abstract */
+export enum aboutStates {
+  a="string",
+  b="number",
+}
+
+export default class Api extends Storage{
+
+}
 // GET_DATA_ASYN 接口参数类型
 // export interface DataOptions {}
 

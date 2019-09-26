@@ -1,6 +1,6 @@
 import { Component, Vue } from "vue-property-decorator"
 import { Getter, Action } from "vuex-class"
-import {AboutData, AboutState} from '@/types/views/about.interface'
+import {AboutData, AboutState, aboutStates} from '@/types/views/about.interface'
 // import {  } from "@/components" // 组件
 
 @Component({})
@@ -34,6 +34,7 @@ export default class About extends Vue {
 
   mounted() {
     //
+    console.log(aboutStates);
   }
 
   // 初始化函数
