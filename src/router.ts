@@ -46,6 +46,16 @@ const routes = [
       title: 'about',
     },
   },
+  {
+    path: '/course',
+    name: 'course',
+    component: () => import('@/views/course/course.vue'),
+    meta: {
+      icon: '',
+      keepAlive: true,
+      title: 'about',
+    },
+  },
 ];
 
 const router = new Router({
