@@ -10,6 +10,7 @@
     "com": "node scripts/component"
   },
   "dependencies": {
+    "@types/qs": "^6.5.3",
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "js-cookie": "^2.2.1",
@@ -24,6 +25,7 @@
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-typescript": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
+    "qs": "^6.9.0",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "typescript": "^3.4.3",

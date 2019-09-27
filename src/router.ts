@@ -7,29 +7,9 @@ const routes = [
     path: '/',
   },
   {
-    path: '/index',
-    name: 'router.ts',
-    component: () => import('@/views/index/index.vue'),
-    meta: {
-      icon: '',
-      keepAlive: true,
-      title: 'router.ts',
-    },
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/login/login.vue'),
-    meta: {
-      icon: '',
-      keepAlive: true,
-      title: 'login',
-    }
-  },
-  {
     path: '/home',
     name: 'home',
-    component: () => import('@/views/home/home.vue'),
+    component: () => import('@/views/Home.vue'),
     meta: {
       icon: '',
       keepAlive: true,
@@ -39,17 +19,7 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    component: () => import('@/views/about/about.vue'),
-    meta: {
-      icon: '',
-      keepAlive: true,
-      title: 'about',
-    },
-  },
-  {
-    path: '/course',
-    name: 'course',
-    component: () => import('@/views/course/course.vue'),
+    component: () => import('@/views/About.vue'),
     meta: {
       icon: '',
       keepAlive: true,
