@@ -20,81 +20,80 @@ if (!dirName) {
  * @msg: vue页面模版
  */
 const template = ()=>{
-    const VueTep = `
-        <template>
-              <div class="${dirName}-wrap">
-                {{data.pageName}}
-              </div>
-        </template>
-        
-        <script lang="ts" src="./${dirName}.ts"></script>
-        
-        <style lang="scss">
-          //@import './${dirName}.scss'
-        </style>
+const VueTep = `
+    <template>
+          <div class="${dirName}-wrap">
+            {{data.pageName}}
+          </div>
+    </template>
+    
+    <script lang="ts" src="./${dirName}.ts"></script>
+    
+    <style lang="scss">
+      //@import './${dirName}.scss'
+    </style>
     `;
 
 // ts 模版
 const tsTep =
-    `import { Component, Vue } from "vue-property-decorator"
-    import { Getter, Action } from "vuex-class"
-    import { ${capPirName}Data } from './${dirName}.interface'
-    // import {  } from "@/components" // 组件
+`import { Component, Vue } from "vue-property-decorator"
+import { Getter, Action } from "vuex-class"
+import { ${capPirName}Data } from './${dirName}.interface'
+
+@Component({})
+export default class About extends Vue {
+  // Getter
+  // @Getter ${dirName}.author
     
-    @Component({})
-    export default class About extends Vue {
-      // Getter
-      // @Getter ${dirName}.author
-        
-      // Action
-      // @Action GET_DATA_ASYN
+  // Action
+  // @Action GET_DATA_ASYN
+
+  // data
+  data: ${capPirName}Data = {
+    pageName: '${dirName}'
+  }
+
+  created() {
+    //
+  }
     
-      // data
-      data: ${capPirName}Data = {
-        pageName: '${dirName}'
-      }
+  activated() {
+    //
+  }
+
+  mounted() {
+    //
+  }
+
+  // 初始化函数
+  init() {
+    //
+  }
     
-      created() {
-        //
-      }
-        
-      activated() {
-        //
-      }
-    
-      mounted() {
-        //
-      }
-    
-      // 初始化函数
-      init() {
-        //
-      }
-        
-    }`;
+}`;
 
 // scss 模版
 const scssTep =
-    `@import "@/assets/scss/variables.scss";
-    
-    .${dirName}-wrap {
-      width: 100%;
-    }`;
+`@import "@/assets/scss/variables.scss";
+
+.${dirName}-wrap {
+  width: 100%;
+}`;
 
 // interface 模版
 const interfaceTep = `
 // ${dirName}.Data 参数类型
-    export interface ${capPirName}Data {
-      pageName: string
-    }
-    
-    // VUEX ${dirName}.State 参数类型
-    export interface ${capPirName}State {
-      data?: any
-    }
-    
-    // GET_DATA_ASYN 接口参数类型
-    // export interface DataOptions {}
+export interface ${capPirName}Data {
+  pageName: string
+}
+
+// VUEX ${dirName}.State 参数类型
+export interface ${capPirName}State {
+  data?: any
+}
+
+// GET_DATA_ASYN 接口参数类型
+// export interface DataOptions {}
 
     `;
 
@@ -146,13 +145,16 @@ const vuexTep = `
 
 // api 接口模版
 const apiTep = `
-    import http from '@/utils/server/axios';
+/**
+ * 导入统一出口 api 文件
+ */
+import http from '../api';
 
-    export interface ${dirName} {
-      base: string
-    }
+export const ${dirName}Data = (data: any, config: any) => {
+    return http.get('novelApi', data);
+};
     
-    `;
+`;
 // 校验
 
 fs.mkdirSync(`${basePath}/views/${dirName}`) // mkdir
@@ -168,8 +170,8 @@ fs.writeFileSync(`${dirName}.interface.ts`, interfaceTep) // interface 在当前
 // process.chdir(`${basePath}/store/module`); // cd store
 fs.writeFileSync(`${dirName}.vuex.ts`, vuexTep) // vuex 在当前目录写入 需要使用的 vuex 的文件
 
-fs.mkdirSync(`${basePath}/utils/client/${dirName}`) ; // 在当前目录中创建 给目录的 api 文件
-process.chdir(`${basePath}/utils/client/${dirName}`); // cd 当前 api 目录中
+fs.mkdirSync(`${basePath}/client/${dirName}`) ; // 在当前目录中创建 给目录的 api 文件
+process.chdir(`${basePath}/client/${dirName}`); // cd 当前 api 目录中
 fs.writeFileSync(`${dirName}.api.ts`, apiTep) // api 在客户端中写入 api 的文件
 
 console.log('创建完成');

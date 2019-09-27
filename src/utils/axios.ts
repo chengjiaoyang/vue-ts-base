@@ -1,30 +1,24 @@
 import axios from 'axios';
 import qs from 'qs';
-/**
- *  读取外部 配置文件
- */
-import globalConfig from '@/project.config';
 
-console.log(globalConfig);
 
 class Http {
     private service: any = null;
-    constructor(url?: string) {
+    constructor(config:{url: string, timeout: number, filterCode: Array<number>}) {
         axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
         this.service = axios.create({
-            baseURL: url ? url : '',
-            timeout: 5000,
+            baseURL: config.url ? config.url : '',
+            timeout: config.timeout || 3000,
         });
         this.service.interceptors.request.use((config: { data: any; }) => {
             config.data = qs.stringify(config.data);
             return config;
         }, (error: any) => Promise.reject(error));
         // 过滤业务Code
-        let filterCode = [100, 200];
         this.service.interceptors.response.use((response: { status: number; data: { code: number; }; }) => {
             // console.log('返回参数 ==>', response);
             if (response.status === 200) {
-                if (!response.data.code || filterCode.includes(response.data.code)) {
+                if (!response.data.code || config.filterCode.includes(response.data.code)) {
                     return Promise.resolve(response.data || true);
                 } else {
                     return Promise.reject(response);
@@ -41,4 +35,5 @@ class Http {
         return this.service.post(`${url}`, data, config);
     }
 }
+
 export default Http;
