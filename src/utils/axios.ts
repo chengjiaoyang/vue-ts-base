@@ -9,6 +9,7 @@ class Http {
         this.service = axios.create({
             baseURL: config.url ? config.url : '',
             timeout: config.timeout || 3000,
+            withCredentials:true, // 运行携带 cookie
         });
         this.service.interceptors.request.use((config: { data: any; }) => {
             config.data = qs.stringify(config.data);
