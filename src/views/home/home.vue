@@ -1,13 +1,11 @@
+<template lang="pug">
+      div.header home
+</template>
 
-    <template>
-          <div class="home-wrap">
-            {{data.pageName}}
-          </div>
-    </template>
-    
-    <script lang="ts" src="./home.ts"></script>
-    
-    <style lang="scss">
-      //@import './home.scss'
-    </style>
-    
+<script lang="ts" src="./home.ts"></script>
+
+<style lang="stylus" scoped>
+  /** 引入自定义 stylus 样式文件 */
+  @import './home.stylus'
+  /** 这里可以写自己的文件 */
+</style>
